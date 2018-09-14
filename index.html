@@ -4,10 +4,20 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="./manifest.json">
 	<!-- Name of your awesome camera app -->
 	<title>Camera App</title> 
 	<!-- Link to your main style sheet-->
 	<link rel="stylesheet" href="style.css"> 
+	<!-- place this in a head section -->
+	  <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+	  <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png">
+	  <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png">
+	  <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png">
+	  <link rel="apple-touch-icon" sizes="152x152" href="images/icons/icon-72x72.png">
+	  <link rel="apple-touch-icon" sizes="180x180" href="images/icons/icon-96x96.png">
+	  <link rel="apple-touch-icon" sizes="167x167" href="images/icons/icon-144x144.png">
+	  <link rel="apple-touch-icon" sizes="167x167" href="images/icons/icon-152x152.png">
 </head>
 <body>
 	<main id="camera">
@@ -25,6 +35,14 @@
 
 	</main>
 	
-		<script src="app.js"></script> 
+<script src="app.js"></script> 
+<script>
+	if('serviceWorker' in navigator) {
+	  navigator.serviceWorker.register('./sw.js')
+	  .then(function() {
+	    console.log('Service Worker Registered');
+	  });
+	}
+</script>
 </body>
 </html>
